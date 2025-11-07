@@ -6,7 +6,7 @@
 /*   By: olarseni <olarseni@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 23:48:56 by olarseni          #+#    #+#             */
-/*   Updated: 2025/10/28 23:59:20 by olarseni         ###   ########.fr       */
+/*   Updated: 2025/11/07 21:28:44 by olarseni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class Weapon
 	public:
 		Weapon();
 		Weapon(const String type);
-		String	get_type(void);
-		void	set_type(const String type);
+		const String	getType(void);
+		void	setType(const String type);
 		~Weapon();
 };
 

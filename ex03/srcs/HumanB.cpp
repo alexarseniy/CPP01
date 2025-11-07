@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olarseni <olarseni@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 23:59:54 by olarseni          #+#    #+#             */
-/*   Updated: 2025/11/07 21:41:19 by olarseni         ###   ########.fr       */
+/*   Created: 2025/11/02 18:01:48 by olarseni          #+#    #+#             */
+/*   Updated: 2025/11/07 21:38:22 by olarseni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#include "HumanB.hpp"
 #include <iostream>
 
-HumanA::HumanA(const String name, Weapon &weapon)
-	: weapon(weapon), name(name)
+HumanB::HumanB(const String name)
 {
+	this->name = name;
 }
 
-void	HumanA::attack(void)
+HumanB::HumanB(const String name, const Weapon weapon)
+{
+	this->name = name;
+	this->weapon = weapon;
+}
+
+void	HumanB::setWeapon(const Weapon weapon)
+{
+	this->weapon = weapon;
+}
+
+void	HumanB::attack(void)
 {
 	std::cout << name << " attacks with their " << this->weapon.getType();
 }
 
-HumanA::~HumanA(void)
+HumanB::~HumanB(void)
 {
 	return ;
 }

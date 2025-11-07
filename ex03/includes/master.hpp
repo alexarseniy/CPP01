@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   master.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olarseni <olarseni@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 23:59:54 by olarseni          #+#    #+#             */
-/*   Updated: 2025/11/07 21:41:19 by olarseni         ###   ########.fr       */
+/*   Created: 2025/11/07 21:19:10 by olarseni          #+#    #+#             */
+/*   Updated: 2025/11/07 21:20:12 by olarseni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include <iostream>
-
-HumanA::HumanA(const String name, Weapon &weapon)
-	: weapon(weapon), name(name)
-{
-}
-
-void	HumanA::attack(void)
-{
-	std::cout << name << " attacks with their " << this->weapon.getType();
-}
-
-HumanA::~HumanA(void)
-{
-	return ;
-}
+#ifndef MASTER_HPP
+# define MASTER_HPP
+# include "Weapon.hpp"
+# include "HumanA.hpp"
+# include "HumanB.hpp"
+#endif

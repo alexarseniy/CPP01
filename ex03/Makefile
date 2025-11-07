@@ -6,7 +6,7 @@
 #    By: olarseni <olarseni@student.42madrid.c      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/28 21:37:07 by olarseni          #+#    #+#              #
-#    Updated: 2025/10/28 23:48:24 by olarseni         ###   ########.fr        #
+#    Updated: 2025/11/07 21:22:12 by olarseni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 #==============================================================================#
 
 # Program name
-NAME	=	Moar_Brainz
+NAME	=	Unnecesary_Violence
 
 # SRCS
 VPATH	=	srcs

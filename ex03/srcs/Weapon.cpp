@@ -6,7 +6,7 @@
 /*   By: olarseni <olarseni@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 23:52:17 by olarseni          #+#    #+#             */
-/*   Updated: 2025/10/28 23:59:37 by olarseni         ###   ########.fr       */
+/*   Updated: 2025/11/07 21:29:07 by olarseni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ Weapon::Weapon(const String type)
 	this->type = type;
 }
 
-String Weapon::get_type(void)
+const String Weapon::getType(void)
 {
 	return (this->type);
 }
 
-void	Weapon::set_type(const String type)
+void	Weapon::setType(const String type)
 {
 	this->type = type;
 }
