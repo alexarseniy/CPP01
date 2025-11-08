@@ -6,7 +6,7 @@
 #    By: olarseni <olarseni@student.42madrid.c      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/08 18:42:34 by olarseni          #+#    #+#              #
-#    Updated: 2025/11/08 20:11:27 by olarseni         ###   ########.fr        #
+#    Updated: 2025/11/08 21:24:26 by olarseni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,7 @@
 NAME	=	HI_THIS_IS_BRAIN
 
 VPATH	=	./
-SRCS	=	main.cpp		\
-			Zombie.cpp
+SRCS	=	main.cpp
 
 OBJS	=	$(SRCS:%.cpp=%.o)
 

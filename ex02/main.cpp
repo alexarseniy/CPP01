@@ -6,15 +6,12 @@
 /*   By: olarseni <olarseni@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 19:19:19 by olarseni          #+#    #+#             */
-/*   Updated: 2025/11/08 20:15:25 by olarseni         ###   ########.fr       */
+/*   Updated: 2025/11/08 21:24:34 by olarseni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-#include "Zombie.hpp"
-
-Zombie	*zombieHorde(int N, std::string name);
 
 int main(void)
 {
