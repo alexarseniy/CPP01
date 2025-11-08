@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olarseni <olarseni@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 21:53:17 by olarseni          #+#    #+#             */
-/*   Updated: 2025/10/28 22:15:11 by olarseni         ###   ########.fr       */
+/*   Created: 2025/11/08 19:19:19 by olarseni          #+#    #+#             */
+/*   Updated: 2025/11/08 19:22:45 by olarseni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 #include "Zombie.hpp"
 
-Zombie::Zombie(const String name)
+int main(void)
 {
-	this->name = name;
-}
-
-void	Zombie::announce(void)
-{
-	std::cout  << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-Zombie::~Zombie()
-{
-	std::cout << this->name << " has been destroyed." << std::endl;
-	return ;
+	randomChump("Paquito el chocolatero");
+	Zombie *newZ = newZombie("Olek");
+	newZ->announce();
+	delete newZ;
+	return 0;
 }

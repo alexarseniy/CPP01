@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: olarseni <olarseni@student.42madrid.c      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/10/28 21:37:07 by olarseni          #+#    #+#              #
-#    Updated: 2025/10/28 22:14:04 by olarseni         ###   ########.fr        #
+#    Created: 2025/11/08 18:42:34 by olarseni          #+#    #+#              #
+#    Updated: 2025/11/08 19:09:59 by olarseni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,34 +14,25 @@
 #									VARIABLES								   #
 #==============================================================================#
 
-# Program name
-NAME	=	BrainZ
+NAME	=	BraiiiiiiinnnzzzZ
 
-# SRCS
-VPATH	=	srcs
+VPATH	=	./
 SRCS	=	main.cpp		\
 			Zombie.cpp		\
 			newZombie.cpp	\
 			randomChump.cpp
 
-# OBJS
-ODIR	=	objects
-OBJS	=	$(SRCS:%.cpp=$(ODIR)/%.o)
+OBJS	=	$(SRCS:%.cpp=%.o)
 
-# Includes
-IDIR	=	includes
-
-# Compiler
 CC		=	c++
-
-# FLAGS
-CFLAGS	=	-Wall -Wextra -Werror -g3 -std=c++98
-IFLAGS	=	-I$(IDIR)
+CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -g3
+IFLAGS	=	-I.
 
 #==============================================================================#
-#								Rules										   #
+#									RULES									   #
 #==============================================================================#
-$(ODIR)/%.o: %.cpp | $(ODIR)
+
+%.o: %.cpp
 	@$(CC) $(CFLAGS) $(IFLAGS) -o $@ -c $<
 	@printf "\033[2K\rCompiling $@"
 
@@ -50,12 +41,10 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@printf "\033[2K\rCompiling $(NAME)\n"
 	@$(CC) $(CFLAGS) $(IFLAGS) -o $@ $^
-
-$(ODIR):
-	@mkdir -p $(ODIR)
+	@$(clean)
 
 clean:
-	@rm -rf $(ODIR)
+	@rm -rf $(OBJS)
 
 fclean: clean
 	@rm -rf $(NAME)

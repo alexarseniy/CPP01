@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olarseni <olarseni@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 22:00:07 by olarseni          #+#    #+#             */
-/*   Updated: 2025/10/28 22:16:24 by olarseni         ###   ########.fr       */
+/*   Created: 2025/11/08 19:15:13 by olarseni          #+#    #+#             */
+/*   Updated: 2025/11/08 19:16:57 by olarseni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include <string>
 #include "Zombie.hpp"
 
-void	randomChump(std::string name)
+Zombie	*newZombie(std::string name)
 {
-	Zombie	newZ(name);
-	newZ.announce();
+	Zombie *newZ = new Zombie(name);
+	return (newZ);
 }
