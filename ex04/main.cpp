@@ -6,7 +6,7 @@
 /*   By: olarseni <olarseni@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 19:19:19 by olarseni          #+#    #+#             */
-/*   Updated: 2025/11/15 23:04:25 by olarseni         ###   ########.fr       */
+/*   Updated: 2025/11/15 23:37:50 by olarseni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ static int check_errors(int argc, char **argv)
 		std::cerr << CRED << "ERROR: Expected 3 args and provided " << argc - 1 << " args" << RESET << std::endl;
 		return (ERROR_ARGS);
 	}
-	if (!strncmp(argv[2], "", strlen(argv[2])))
+	if (!std::strlen(argv[2]))
 	{
 		std::cerr << CRED << "ERROR: first string cannot be void" << RESET << std::endl;
-		return (ERROR_ARGS);
+		return (ERROR_INVALID_ARG);
 	}
 	return (OK);
 }
@@ -41,16 +41,15 @@ static int check_errors(int argc, char **argv)
 static std::string ft_replaceAll(char *buffer, char **argv)
 {
 	std::string replace, buff;
-	std::size_t start = 0;
 	std::size_t end = 0;
+	std::size_t s1_len = std::strlen(argv[2]);
 
 	buff = buffer; 
 	while ((end = buff.find(argv[2])) != std::string::npos)
 	{
 		replace.append(buff.substr(0, end));
 		replace.append(argv[3]);
-		start = end + strlen(argv[2]);
-		buff = buff.substr(start);
+		buff = buff.substr(end + s1_len);
 	}
 	if (end == std::string::npos && buff.size())
 		replace.append(buff);
@@ -84,11 +83,15 @@ static int	openFile(char *f_name, std::ifstream &inFile, std::ofstream &outFile)
 
 static char	*readFileToBuffer(std::ifstream &inFile)
 {
-	char	*buffer;
-	int		len;
+	char				*buffer;
+	std::streampos		pos;
+	std::size_t			len;
 
 	inFile.seekg(0, inFile.end);
-	len = inFile.tellg();
+	pos = inFile.tellg();
+	if (pos < 0)
+		return (NULL);
+	len = static_cast<std::size_t>(pos);
 	inFile.seekg(0, inFile.beg);
 	buffer = new char [len + 1];
 	if (!buffer)
@@ -111,7 +114,7 @@ int	main(int argc, char **argv)
 	char * buffer = readFileToBuffer(inFile);
 	if (!buffer)
 	{
-		std::cerr << CRED << "ERROR: Memmory allocation error" << RESET << std::endl;
+		std::cerr << CRED << "ERROR: Buffer creation or reading file error" << RESET << std::endl;
 		return (ERROR_MEM_ALLOC);
 	}
 	outFile << ft_replaceAll(buffer, argv);
